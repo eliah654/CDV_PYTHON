@@ -141,9 +141,9 @@ class TrainConnectionsTest(BaseTest):
                 print("nie ma takiego pociągu")
 
 
-    @data(*open_file("DDT_data.csv"))
+    @data(*open_file("DDT_data3.csv"))
     @unpack
-    def test_search_ddt(self, godzinka, dzien, wyjazd, przyjazd, pociag, numer, ifnazwa):
+    def test_search_ddt(self, godzinka, dzien, wyjazd, przyjazd):
         fc = SearchFormClicks(self.driver)
         fc.set_houer(godzinka)
         fc.set_date(dzien)
@@ -153,6 +153,12 @@ class TrainConnectionsTest(BaseTest):
         fc.polaczenia_bezposrednie()
         sleep(1)
         fc.click_szukaj()
+        sleep(5)
+        element = self.driver.find_element(*ResultsPage.BRAK_POLACZENIA)
+        assert element.is_displayed()
+        
+    
+        
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -72,7 +72,7 @@ class HamburgerMenu:
     
     
     
-class ButtomMenu:
+class BottomMenu:
     """
     Lokatory do linków z dolenj części strony
     """
@@ -87,4 +87,15 @@ class ButtomMenu:
     
     
     
-    
+class  SiecRozkladObjects:
+    """
+    Lokatory do strony sieciowy rozkład jazdy
+    """
+    WEDLUG_STACJI = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='1']/a[1]")
+    WEDLUG_STACJI_FIELD = (By.XPATH, "//input[@id='tabliceTextBoxRozkladWgStacji']")
+    WEDLUG_LINI = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='2']/a[1]")
+    WEDLUG_LINI_FIELD = (By.XPATH, "//input[@id='tabliceLinieTextBox']")
+    WEDLUG_TABLICY = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='3']/a[1]")
+    WEDLUG_TABLICY_FIELD = (By.XPATH, "//input[@id='tabliceLinieTextBox']")
+    PELEN_ROKLAD_TAB = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
+    SPIS_TABLIC = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
