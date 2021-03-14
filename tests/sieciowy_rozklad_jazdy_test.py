@@ -1,4 +1,5 @@
 from pages.sieciowy_rozklad_jazdy import SieciowyRozkladJazdyOperacje
+from pages.strona_glowna import SieciowyRozkladJazdy
 from tests.main_test import BaseTest
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,27 +25,37 @@ class SieciowyRozkladJazyTest(BaseTest):
     
     def setUp(self):
         super().setUp()
-        sg = SearchForm(self.driver)
-        sg.search_form()
+        sg = SieciowyRozkladJazdy(self.driver)
+        sg.zaladuj_sieciowy_rozklad()
     
-    @data(*open_file("DDT_data4a.csv"))
-    @unpack
-    def wedlug_stacji_test(self, stacja, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
-        
-        sjr = SieciowyRozkladJazdyOperacje(self.driver)
-        sjr.podaj_stacje(stacja)
-        
-
     @data(*open_file("DDT_data4b.csv"))
     @unpack
-    def wedlug_lini_test(self, nrlini, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
+    def test_wedlug_stacji(self, stacja, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
+        wst = SieciowyRozkladJazdyOperacje(self.driver)
+        #wst.rodzaj_sieciowego_rozkladu_jazdy(1)
+        wst.podaj_stacje(stacja)
+        sleep(5)
+        wyniki_weryfikacja = wst.rozklad_stacje_resultat()
+        print(wyniki_weryfikacja)
+        print(EC.text_to_be_present_in_element(wyniki_weryfikacja[0]))
+
+    @unittest.skip
+    @data(*open_file("DDT_data4a.csv"))
+    @unpack
+    def test_wedlug_lini(self, nrlini, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
         pass
 
+    @unittest.skip
     @data(*open_file("DDT_data4c.csv"))
     @unpack
-    def wedlug_tablicy_test(self, nrtablicy,nazwatablicy):
+    def test_wedlug_tablicy(self, nrtablicy,nazwatablicy):
         pass
 
+"""
     "Sieciowy rozkład jazdy - Według stacji - Wybór stacji - Portal Pasażera - PKP Polskie Linie Kolejowe S.A."
     "Sieciowy rozkład jazdy - Według linii - Wybór linii - Portal Pasażera - PKP Polskie Linie Kolejowe S."
     "Sieciowy rozkład jazdy - Według tablicy - Wybór tablicy - Portal Pasażera - PKP Polskie Linie Kolejowe S.A."
+"""
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
