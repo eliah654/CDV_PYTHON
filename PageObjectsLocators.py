@@ -93,15 +93,23 @@ class  SiecRozkladObjects:
     """
     WEDLUG_STACJI = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='1']/a[1]")
     WEDLUG_STACJI_FIELD = (By.XPATH, "//input[@id='tabliceTextBoxRozkladWgStacji']")
-    WEDLUG_STACJI_RESULTAT1 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[1]/div[1]/p[1]/strong[1]")
-    WEDLUG_STACJI_RESULTAT2 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/h3[1]")
-    WEDLUG_STACJI_RESULTAT3 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/strong[1]")
-    WEDLUG_STACJI_RESULTAT4 = (By.XPATH, "//button[@id='id-415']//span[@class='icon-arrow-down']")
-    #WEDLUG_STACJI_RESULTAT5 = (By.XPATH, "")
-    WEDLUG_LINI = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='2']/a[1]")
+    
+    OBJECT_RESULTAT1 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[1]/div[1]/p[1]/strong[1]")
+    OBJECT_RESULTAT2 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT3 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[3]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT4 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[4]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT5 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[5]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT6 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[6]/div[1]/div[1]/h3[1]")
+    
+    WEDLUG_LINI = (By.XPATH, "/html[1]/body[1]/div[4]/div[1]/div[4]/div[1]/ul[1]/li[2]/a[1]")
     WEDLUG_LINI_FIELD = (By.XPATH, "//input[@id='tabliceLinieTextBox']")
-    WEDLUG_TABLICY = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='3']/a[1]")
-    WEDLUG_TABLICY_FIELD = (By.XPATH, "//input[@id='tabliceLinieTextBox']")
+    
+    WEDLUG_TABLICY = (By.XPATH, "/html[1]/body[1]/div[4]/div[1]/div[4]/div[1]/ul[1]/li[3]/a[1]")
+    WEDLUG_TABLICY_FIELD = (By.XPATH, "//input[@id='tabliceTextBox']")
+
+    OBJECT_RESULTAT7 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT8 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/strong[1]")
+    
     PELEN_ROKLAD_TAB = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     SPIS_TABLIC = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     CLICK = (By.XPATH, "//div[@class='fieldset-group fieldset-group--wide box--flex']//div[@class='input-wrapper']//span[@class='icon-plk-start icon--md']")

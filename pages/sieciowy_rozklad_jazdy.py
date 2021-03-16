@@ -4,6 +4,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
+
+
 class SieciowyRozkladJazdyOperacje(MainPage):
     
     def rodzaj_sieciowego_rozkladu_jazdy(self, rodzaj):
@@ -27,21 +29,40 @@ class SieciowyRozkladJazdyOperacje(MainPage):
         sleep(1)
         element.send_keys(Keys.ENTER)
         
-    def rozklad_stacje_resultat(self):
-        resultat = []
-        resultat.append(self.driver.find_element(*SiecRozkladObjects.WEDLUG_STACJI_RESULTAT1))
-        resultat.append(self.driver.find_element(*SiecRozkladObjects.WEDLUG_STACJI_RESULTAT2))
-        resultat.append(self.driver.find_element(*SiecRozkladObjects.WEDLUG_STACJI_RESULTAT3))
+    def rozklad_stacje_rezultat(self, result_object):
+        resultat = "t"
+        if result_object == 1:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT1).text
+        elif result_object == 2:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT2).text
+        elif result_object == 3:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT3).text
+        elif result_object == 4:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT4).text
+        elif result_object == 5:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT5).text
+        elif result_object == 6:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT6).text
+        elif result_object == 7:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT7).text
+        elif result_object == 8:
+            resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT8).text
+        print(resultat)
         return resultat
     
     def podaj_linie(self, nrlini):
-        
+        self.driver.find_element(*SiecRozkladObjects.WEDLUG_LINI).click()
         element = self.driver.find_element(*SiecRozkladObjects.WEDLUG_LINI_FIELD)
-        element.send_keys(nrlini)
-        element.send_keys(Keys.ENTER)
+        if EC.element_to_be_clickable(element):
+            element.send_keys(nrlini)
+            sleep(2)
+            element.send_keys(Keys.ENTER)
+
     
     def podaj_numer_tablicy(self, nrtablicy):
-        
+        self.driver.find_element(*SiecRozkladObjects.WEDLUG_TABLICY).click()
         element = self.driver.find_element(*SiecRozkladObjects.WEDLUG_TABLICY_FIELD)
-        element.send_keys(nrtablicy)
-        element.send_keys(Keys.ENTER)
+        if EC.element_to_be_clickable(element):
+            element.send_keys(nrtablicy)
+            sleep(1)
+            element.send_keys(Keys.ENTER)

@@ -47,4 +47,4 @@ class SieciowyRozkladJazdy(MainPage):
         self.driver.find_element(*SearchPage.POLITYKA_PRYWATNOSCI).click()
         self.driver.find_element(*BottomMenu.SIECIOWY_ROZKLAD).click()
         
-        
+
