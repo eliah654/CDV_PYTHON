@@ -1,9 +1,6 @@
 from pages.sieciowy_rozklad_jazdy import SieciowyRozkladJazdyOperacje
 from pages.strona_glowna import SieciowyRozkladJazdy
 from tests.main_test import BaseTest
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains as ActC
 from time import sleep
 import unittest
 import csv
@@ -28,7 +25,7 @@ class SieciowyRozkladJazyTest(BaseTest):
         sg = SieciowyRozkladJazdy(self.driver)
         sg.zaladuj_sieciowy_rozklad()
 
-    @unittest.skip
+    
     @data(*open_file("DDT_data4b.csv"))
     @unpack
     def test_wedlug_stacji(self, stacja, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
@@ -49,7 +46,7 @@ class SieciowyRozkladJazyTest(BaseTest):
         if nrtablicy5 != "0":
             assert nrtablicy5 in wst.rozklad_stacje_rezultat(6)
 
-    @unittest.skip
+    
     @data(*open_file("DDT_data4a.csv"))
     @unpack
     def test_wedlug_lini(self, nrlini, liczbawyszukiwan, nrtablicy1, nrtablicy2, nrtablicy3, nrtablicy4, nrtablicy5):
@@ -83,7 +80,14 @@ class SieciowyRozkladJazyTest(BaseTest):
         assert nrtablicy in wst.rozklad_stacje_rezultat(7)
         stacje = wst.rozklad_stacje_rezultat(8).replace('\n', ' ')
         assert nazwatablicy in stacje
-
+    
+    def test_error_message_verification1(self):
+        wst = SieciowyRozkladJazdyOperacje(self.driver)
+        wst.podaj_stacje("sodjfuhno")
+        sleep(2)
+        
+        assert "Wpisana nazwa stacji jest nieprawidłowa. Prosimy o zwrócenie uwagi na poprawną pisownię." in wst.rozklad_stacje_rezultat(9)
+        
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

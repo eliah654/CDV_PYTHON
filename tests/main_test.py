@@ -6,7 +6,7 @@ from time import sleep
 class BaseTest(unittest.TestCase):
     
     def setUp(self):
-        self.driver = webdriver.Chrome() #webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.get("https://portalpasazera.pl")
 

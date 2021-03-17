@@ -5,7 +5,6 @@ from tests.main_test import BaseTest
 from PageObjectsLocators import ResultsPage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains as ActC
 from time import sleep
 import unittest
@@ -34,7 +33,7 @@ class TrainConnectionsTest(BaseTest):
         sg = SearchForm(self.driver)
         sg.search_form()
     
-    @unittest.skip
+    
     @data(*open_file("DDT_data.csv"))
     @unpack
     def test_search_ddt(self, godzinka, dzien, wyjazd, przyjazd, pociag, numer, ifnazwa):
@@ -58,7 +57,7 @@ class TrainConnectionsTest(BaseTest):
             assert numer in numer_pociagu.text
             assert pociag in nazwa_pociagu.text
     
-    @unittest.skip
+    
     @data(*open_file("DDT_data2.csv"))
     @unpack
     def test_search_ddt2(self, godzinka, dzien, wyjazd, przyjazd, pociag, numer, ifnazwa, przesiadki, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C):
@@ -82,7 +81,7 @@ class TrainConnectionsTest(BaseTest):
                     rp.clcik_przesiadki(1)
                     sleep(5)
                     
-                    wynik = [ResultPageClicks.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
+                    wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
@@ -94,7 +93,7 @@ class TrainConnectionsTest(BaseTest):
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(2)
                     sleep(5)
-                    wynik = [ResultPageClicks.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
+                    wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
@@ -106,7 +105,7 @@ class TrainConnectionsTest(BaseTest):
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(3)
                     sleep(5)
-                    wynik = [ResultPageClicks.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
+                    wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
@@ -118,7 +117,7 @@ class TrainConnectionsTest(BaseTest):
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(4)
                     sleep(5)
-                    wynik = [ResultPageClicks.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
+                    wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
@@ -132,7 +131,7 @@ class TrainConnectionsTest(BaseTest):
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(5)
                     sleep(5)
-                    wynik = [ResultPageClicks.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
+                    wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"

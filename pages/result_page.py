@@ -13,7 +13,10 @@ class ResultPageClicks(MainPage):
             nazwa_pociagu = self.driver.find_element_by_xpath("//p[contains(text(),'" + pociag + "')]")
             return nazwa_pociagu
         elif int(ifnazwa) == 2:
-            nazwa_pociagu = self.driver.find_element_by_xpath("// div[ @class ='search-results__item row abt-focusable search-results__item--expanded'] // div[@ class ='col-9 col-12--phone relative'] // div[@ class ='row row-station box--flex block-phone'] // div[@ class ='col-3 col-12--phone inline-center box--flex--column'] // p[@ class ='item-label'][contains(text(), 'osobowy')]")
+            nazwa_pociagu = self.driver.find_element_by_xpath("//div[@class ='search-results__item row abt-focusable search-results__item--expanded']//div[@ class ='col-9 col-12--phone relative']//div[@ class ='row row-station box--flex block-phone']//div[@ class ='col-3 col-12--phone inline-center box--flex--column']//p[@ class ='item-label'][contains(text(), 'osobowy')]")
+            return nazwa_pociagu
+        elif int(ifnazwa) == 3:
+            nazwa_pociagu = self.driver.find_element_by_xpath("/html[1]/body[1]/div[6]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[3]/p[4]/span[2]").text
             return nazwa_pociagu
 
     def check_numer_pociagu(self, numer):

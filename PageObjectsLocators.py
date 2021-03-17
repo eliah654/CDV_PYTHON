@@ -59,8 +59,8 @@ class HamburgerMenu:
     """
     Lokatory do menu hamburger
     """
-    MENU_BTN = (By.XPATH, "//span[@class='icon-plk-hamburger icon--md']")
-    MENU_WHOLE = (By.XPATH, "//div[@class='aside-nav__scroll']")
+    MENU_BTN = (By.XPATH, "//button[@id='hamburger-menu']")
+    MENU_WHOLE = (By.XPATH, "//div[@class='aside-nav']")
     MENU_CLOSE = (By.XPATH, "//button[@id='nav-close']//span[@class='txuc'][contains(text(),'Menu')]")
     MENU_POLACZENIA = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='W active']//a[@class='loadScr abt-n-db'][contains(text(),'Wyszukiwanie połączeń')]")
     MENU_MAPA = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='M']//a[@class='loadScr abt-n-db'][contains(text(),'Pociągi na mapie')]")
@@ -113,3 +113,4 @@ class  SiecRozkladObjects:
     PELEN_ROKLAD_TAB = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     SPIS_TABLIC = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     CLICK = (By.XPATH, "//div[@class='fieldset-group fieldset-group--wide box--flex']//div[@class='input-wrapper']//span[@class='icon-plk-start icon--md']")
+    ERROR_MESSAGE1 = (By.XPATH, "//div[@class='param-error s']") #/html[1]/body[1]/div[6]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]

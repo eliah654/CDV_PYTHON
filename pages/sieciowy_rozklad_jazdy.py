@@ -47,7 +47,8 @@ class SieciowyRozkladJazdyOperacje(MainPage):
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT7).text
         elif result_object == 8:
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT8).text
-        print(resultat)
+        elif result_object == 9:
+            resultat = self.driver.find_element(*SiecRozkladObjects.ERROR_MESSAGE1).text
         return resultat
     
     def podaj_linie(self, nrlini):
