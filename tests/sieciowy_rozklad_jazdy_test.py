@@ -5,21 +5,23 @@ from time import sleep
 import unittest
 import csv
 from ddt import ddt, data, unpack
+import os
 
+def open_file(file_name):
+    rows = []
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(THIS_FOLDER, file_name)
+    data_file = open(file_path, 'rt')
+    reader = csv.reader(data_file)
+    next(reader, None)
+    for row in reader:
+        rows.append(row)
+    data_file.close()
+    return rows
 
 @ddt
 class SieciowyRozkladJazyTest(BaseTest):
-    
-    def open_file(file_name):
-        rows = []
-        data_file = open(file_name, 'rt')
-        reader = csv.reader(data_file)
-        next(reader, None)
-        for row in reader:
-            rows.append(row)
-        data_file.close()
-        return rows
-    
+
     def setUp(self):
         super().setUp()
         sg = SieciowyRozkladJazdy(self.driver)

@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import HtmlTestRunner
+import unittest
+from tests.hamburger_test import TestHamburgerMenu
+from tests.search_page_test import TrainConnectionsTest
+from tests.sieciowy_rozklad_jazdy_test import SieciowyRozkladJazyTest
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+dir = os.getcwd()
+
+hamburger_tests = unittest.TestLoader().loadTestsFromTestCase(TestHamburgerMenu)
+search_tests = unittest.TestLoader().loadTestsFromTestCase(TrainConnectionsTest)
+siec_test = unittest.TestLoader().loadTestsFromTestCase(SieciowyRozkladJazyTest)
+
+test_suite = unittest.TestSuite([hamburger_tests, search_tests, siec_test])
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='report'))
