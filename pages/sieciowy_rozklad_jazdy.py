@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-
 class SieciowyRozkladJazdyOperacje(MainPage):
     
     def rodzaj_sieciowego_rozkladu_jazdy(self, rodzaj):
@@ -28,7 +27,7 @@ class SieciowyRozkladJazdyOperacje(MainPage):
         element.send_keys(stacja)
         sleep(1)
         element.send_keys(Keys.ENTER)
-        
+    
     def rozklad_stacje_rezultat(self, result_object):
         resultat = "t"
         if result_object == 1:
@@ -58,7 +57,6 @@ class SieciowyRozkladJazdyOperacje(MainPage):
             element.send_keys(nrlini)
             sleep(2)
             element.send_keys(Keys.ENTER)
-
     
     def podaj_numer_tablicy(self, nrtablicy):
         self.driver.find_element(*SiecRozkladObjects.WEDLUG_TABLICY).click()

@@ -10,7 +10,10 @@ class HamburgerMenuClicks(MainPage):
         hmenu = WebDriverWait(self.driver, 5)
         hmenu.until(EC.element_to_be_clickable(HamburgerMenu.MENU_WHOLE))
     
-    
+    def click_hmenu(self):
+        element = self.driver.find_element(*HamburgerMenu.MENU_BTN)
+        element.click()
+        
     def click_polaczenia(self):
         element = self.driver.find_element(*HamburgerMenu.MENU_POLACZENIA)
         element.click()

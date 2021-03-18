@@ -17,7 +17,7 @@ class TrainConnectionsTest(BaseTest):
     """
     Test wyszukiwania połączeń
     """
-   
+    
     def open_file(file_name):
         rows = []
         data_file = open(file_name, 'rt')
@@ -32,7 +32,6 @@ class TrainConnectionsTest(BaseTest):
         super().setUp()
         sg = SearchForm(self.driver)
         sg.search_form()
-    
     
     @data(*open_file("DDT_data.csv"))
     @unpack
@@ -57,7 +56,6 @@ class TrainConnectionsTest(BaseTest):
             assert numer in numer_pociagu.text
             assert pociag in nazwa_pociagu.text
     
-    
     @data(*open_file("DDT_data2.csv"))
     @unpack
     def test_search_ddt2(self, godzinka, dzien, wyjazd, przyjazd, pociag, numer, ifnazwa, przesiadki, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C):
@@ -79,25 +77,25 @@ class TrainConnectionsTest(BaseTest):
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI1_BTN):
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(1)
-                    sleep(5)
+                    sleep(7)
                     
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
-
+            
             elif int(przesiadki) == 2:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI2_BTN):
                     action_on_element = ActC(self.driver)
                     action_on_element.move_to_element(self.driver.find_element(*ResultsPage.PRZESIADKI2_BTN)).perform()
                     rp = ResultPageClicks(self.driver)
                     rp.clcik_przesiadki(2)
-                    sleep(5)
+                    sleep(6)
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
-                        
+            
             elif int(przesiadki) == 3:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI3_BTN):
                     action_on_element = ActC(self.driver)
@@ -109,7 +107,7 @@ class TrainConnectionsTest(BaseTest):
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
-                        
+            
             elif int(przesiadki) == 4:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI4_BTN):
                     action_on_element = ActC(self.driver)
@@ -121,7 +119,7 @@ class TrainConnectionsTest(BaseTest):
                     
                     assert wynik[0][1] == "OK"
                     assert wynik[0][1] == "OK"
-                        
+            
             elif int(przesiadki) == 5:
                 
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI5_BTN):
@@ -138,8 +136,7 @@ class TrainConnectionsTest(BaseTest):
             
             else:
                 print("nie ma takiego pociągu")
-
-
+    
     @data(*open_file("DDT_data3.csv"))
     @unpack
     def test_search_ddt(self, godzinka, dzien, wyjazd, przyjazd):
@@ -155,9 +152,7 @@ class TrainConnectionsTest(BaseTest):
         sleep(5)
         element = self.driver.find_element(*ResultsPage.BRAK_POLACZENIA)
         assert element.is_displayed()
-        
-    
-        
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

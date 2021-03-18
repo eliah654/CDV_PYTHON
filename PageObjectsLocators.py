@@ -22,9 +22,7 @@ class ResultsPage:
     """
     NOWE_WYSZUKIWANIE_BT = (By.XPATH, "// a[contains(text(), 'Nowe wyszukiwanie')]")
     ZMIEN_KRYTERIA_BTN = (By.XPATH, "// a[ @class ='btn btn--outline btn--color-fourth txlc loadScr'][contains(text(), 'Zmień kryteria')]")
-    PIERWSZY_WYNIK = (By.XPATH, "/ body[@ data-fixed='188'] / div[@ id='accessible-body'] / div[@ class ='main box'] / div[@ class ='search-results box'] / div[@ class ='search-results__container'] / div[1]") #pierwszy kontener z połączeniem
-    TEST_PRZEMYSLANIN = (By.XPATH, "//span[contains(text(),'PRZEMYŚLANIN')]") # nazwa pociągu Przemyślanin
-    TEST_MIESZKO = (By.XPATH, "//span[contains(text(),'MIESZKO')]")
+    PIERWSZY_WYNIK = (By.XPATH, "/ body[@ data-fixed='188'] / div[@ id='accessible-body'] / div[@ class ='main box'] / div[@ class ='search-results box'] / div[@ class ='search-results__container'] / div[1]")
     NAPIS = (By.XPATH, "//h2[@class='inline-center']")
     PRZESIADKI1_BTN = (By.XPATH, "// body[@ data-fixed='188'] / div[@ id='accessible-body'] / div[ @class ='main box'] / div[@ class ='search-results box'] / div[@ class ='search-results__container'] / div[1] / div[1] / button[1]")
     PRZESIADKI2_BTN = (By.XPATH, "// body[@ data-fixed='188'] / div[@ id='accessible-body'] / div[@ class ='main box'] / div[@ class ='search-results box'] / div[@ class ='search-results__container'] / div[2] / div[1] / button[1]")
@@ -46,7 +44,7 @@ class HamburgerMenuResults:
     NAZWA_STACJI1 = (By.XPATH, "//ul[@id='faqPanels_1']//li[@class='k-item k-state-default k-first']//span[@class='k-link k-header'][contains(text(),'Nazwy stacji')]")
 
     #aplikacje mobilne
-    POBIERZ_APP = (By.XPATH, "//h2[@class='inline-center abt-focusable']") #sprawdzić czy zawiera tekst
+    POBIERZ_APP = (By.XPATH, "//h2[@class='inline-center abt-focusable']")
     
     #kontakt
     FORMULARZ_KONTAKTOWY_BTN = (By.XPATH, "//span[@class='hidden--phone txuc']")
@@ -62,7 +60,7 @@ class HamburgerMenu:
     MENU_BTN = (By.XPATH, "//button[@id='hamburger-menu']")
     MENU_WHOLE = (By.XPATH, "//div[@class='aside-nav']")
     MENU_CLOSE = (By.XPATH, "//button[@id='nav-close']//span[@class='txuc'][contains(text(),'Menu')]")
-    MENU_POLACZENIA = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='W active']//a[@class='loadScr abt-n-db'][contains(text(),'Wyszukiwanie połączeń')]")
+    MENU_POLACZENIA = (By.XPATH, "/html[1]/body[1]/div[7]/div[2]/nav[1]/ul[1]/li[1]/a[1]")
     MENU_MAPA = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='M']//a[@class='loadScr abt-n-db'][contains(text(),'Pociągi na mapie')]")
     MENU_PLAKAT = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='PRJP']//a[@class='loadScr abt-n-db'][contains(text(),'Plakatowy rozkład jazdy')]")
     MENU_UTRUDNIENIA = (By.XPATH, "//ul[@class='list-unstyled hidden--mobile']//li[@class='T']//a[@class='loadScr abt-n-db'][contains(text(),'Opóźnienia i utrudnienia')]")
@@ -113,4 +111,4 @@ class  SiecRozkladObjects:
     PELEN_ROKLAD_TAB = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     SPIS_TABLIC = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     CLICK = (By.XPATH, "//div[@class='fieldset-group fieldset-group--wide box--flex']//div[@class='input-wrapper']//span[@class='icon-plk-start icon--md']")
-    ERROR_MESSAGE1 = (By.XPATH, "//div[@class='param-error s']") #/html[1]/body[1]/div[6]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]
+    ERROR_MESSAGE1 = (By.XPATH, "//div[@class='param-error s']")

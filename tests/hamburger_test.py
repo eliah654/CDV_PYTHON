@@ -50,7 +50,7 @@ class TestHamburgerMenu(BaseTest):
         sleep(1)
         hm.click_mobilka()
         sleep(1)
-        assert EC.text_to_be_present_in_element(HamburgerMenuResults.POBIERZ_APP, "Pobierz aplikację mobilną na swoją platformę:") is False
+        assert EC.text_to_be_present_in_element(HamburgerMenuResults.POBIERZ_APP, "Pobierz aplikację mobilną na swoją platformę:")
     
     def test_kontakt(self):
         hm = HamburgerMenuClicks(self.driver)
@@ -64,8 +64,10 @@ class TestHamburgerMenu(BaseTest):
         sleep(1)
         hm.click_kontakt()
         sleep(2)
+        hm.click_hmenu()
+        sleep(2)
         hm.click_polaczenia()
-        sleep(1)
+        sleep(2)
         assert EC.element_to_be_clickable(SearchPage.SZUKAJ_BTN)
     
     def test_close(self):

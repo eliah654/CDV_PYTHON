@@ -24,7 +24,6 @@ class SieciowyRozkladJazyTest(BaseTest):
         super().setUp()
         sg = SieciowyRozkladJazdy(self.driver)
         sg.zaladuj_sieciowy_rozklad()
-
     
     @data(*open_file("DDT_data4b.csv"))
     @unpack
@@ -34,7 +33,7 @@ class SieciowyRozkladJazyTest(BaseTest):
         sleep(5)
         
         assert wst.rozklad_stacje_rezultat(1) == liczbawyszukiwan
-
+        
         if nrtablicy1 != "0":
             assert nrtablicy1 in wst.rozklad_stacje_rezultat(2)
         if nrtablicy2 != "0":
@@ -45,7 +44,6 @@ class SieciowyRozkladJazyTest(BaseTest):
             assert nrtablicy4 in wst.rozklad_stacje_rezultat(5)
         if nrtablicy5 != "0":
             assert nrtablicy5 in wst.rozklad_stacje_rezultat(6)
-
     
     @data(*open_file("DDT_data4a.csv"))
     @unpack
@@ -54,9 +52,9 @@ class SieciowyRozkladJazyTest(BaseTest):
         wst = SieciowyRozkladJazdyOperacje(self.driver)
         wst.podaj_linie(nrlini)
         sleep(5)
-    
+        
         assert wst.rozklad_stacje_rezultat(1) == liczbawyszukiwan
-    
+        
         if nrtablicy1 != "0":
             assert nrtablicy1 in wst.rozklad_stacje_rezultat(2)
         if nrtablicy2 != "0":
@@ -67,7 +65,6 @@ class SieciowyRozkladJazyTest(BaseTest):
             assert nrtablicy4 in wst.rozklad_stacje_rezultat(5)
         if nrtablicy5 != "0":
             assert nrtablicy5 in wst.rozklad_stacje_rezultat(6)
-
     
     @data(*open_file("DDT_data4c.csv"))
     @unpack
@@ -87,7 +84,7 @@ class SieciowyRozkladJazyTest(BaseTest):
         sleep(2)
         
         assert "Wpisana nazwa stacji jest nieprawidłowa. Prosimy o zwrócenie uwagi na poprawną pisownię." in wst.rozklad_stacje_rezultat(9)
-        
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
