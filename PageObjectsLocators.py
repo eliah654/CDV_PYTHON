@@ -5,7 +5,7 @@ class SearchPage:
     """
     Lokatory głównej strony
     """
-    POLITYKA_PRYWATNOSCI = (By.XPATH, "//button[@id='cookieAgree']")
+    POLITYKA_PRYWATNOSCI = (By.XPATH, "//button[contains(text(),'Akceptuj wszystkie pliki cookie')]")
     SZUKAJ_BTN = (By.XPATH, "//button[@class='btn btn--lg btn-start-search txuc']")
     WYJAZD_INPT = (By.XPATH, "//input[@id='departureFrom']")
     PRZYJAZD_INPT = (By.XPATH, "//input[@id='arrivalTo']")
