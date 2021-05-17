@@ -1,7 +1,8 @@
 from pages.main_page import MainPage
 from PageObjectsLocators import ResultsPage
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class ResultPageClicks(MainPage):
     
@@ -22,7 +23,10 @@ class ResultPageClicks(MainPage):
             return nazwa_pociagu
     
     def check_numer_pociagu(self, numer):
-        ret_xpath = self.driver.find_element_by_xpath("//p[contains(text(),'" + numer + "')]")
+        #wait = WebDriverWait(self.driver, 15)
+        elementToFind = "//p[contains(text(),'" + numer + "')]";
+        #wait.until(EC.visibility_of_element_located(elementToFind))
+        ret_xpath = self.driver.find_element_by_xpath(elementToFind)
         return ret_xpath
     
     def clcik_przesiadki(self, poziom):

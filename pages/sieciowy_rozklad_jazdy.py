@@ -3,6 +3,7 @@ from PageObjectsLocators import SiecRozkladObjects
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class SieciowyRozkladJazdyOperacje(MainPage):
@@ -30,24 +31,35 @@ class SieciowyRozkladJazdyOperacje(MainPage):
     
     def rozklad_stacje_rezultat(self, result_object):
         resultat = "t"
+        wait = WebDriverWait(self.driver, 15)
         if result_object == 1:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT1))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT1).text
         elif result_object == 2:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT2))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT2).text
         elif result_object == 3:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT3))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT3).text
         elif result_object == 4:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT4))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT4).text
         elif result_object == 5:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT5))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT5).text
         elif result_object == 6:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT6))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT6).text
         elif result_object == 7:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT7))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT7).text
         elif result_object == 8:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.OBJECT_RESULTAT8))
             resultat = self.driver.find_element(*SiecRozkladObjects.OBJECT_RESULTAT8).text
         elif result_object == 9:
+            wait.until(EC.visibility_of_element_located(SiecRozkladObjects.ERROR_MESSAGE1))
             resultat = self.driver.find_element(*SiecRozkladObjects.ERROR_MESSAGE1).text
+        
         return resultat
     
     def podaj_linie(self, nrlini):

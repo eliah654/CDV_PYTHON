@@ -90,6 +90,7 @@ class TrainConnectionsTest(BaseTest):
             
             elif int(przesiadki) == 2:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI2_BTN):
+                    sleep(5)
                     action_on_element = ActC(self.driver)
                     action_on_element.move_to_element(self.driver.find_element(*ResultsPage.PRZESIADKI2_BTN)).perform()
                     rp = ResultPageClicks(self.driver)
@@ -102,6 +103,7 @@ class TrainConnectionsTest(BaseTest):
             
             elif int(przesiadki) == 3:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI3_BTN):
+                    sleep(5)
                     action_on_element = ActC(self.driver)
                     action_on_element.move_to_element(self.driver.find_element(*ResultsPage.PRZESIADKI3_BTN)).perform()
                     rp = ResultPageClicks(self.driver)
@@ -114,6 +116,7 @@ class TrainConnectionsTest(BaseTest):
             
             elif int(przesiadki) == 4:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI4_BTN):
+                    sleep(5)
                     action_on_element = ActC(self.driver)
                     action_on_element.move_to_element(self.driver.find_element(*ResultsPage.PRZESIADKI4_BTN)).perform()
                     rp = ResultPageClicks(self.driver)
@@ -127,6 +130,7 @@ class TrainConnectionsTest(BaseTest):
             elif int(przesiadki) == 5:
                 
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI5_BTN):
+                    sleep(5)
                     action_on_element = ActC(self.driver)
                     action_on_element.move_to_element(self.driver.find_element(*ResultsPage.PRZESIADKI5_BTN)).perform()
                     

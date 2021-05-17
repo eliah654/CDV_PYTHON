@@ -105,8 +105,10 @@ class  SiecRozkladObjects:
     WEDLUG_TABLICY = (By.XPATH, "/html[1]/body[1]/div[4]/div[1]/div[4]/div[1]/ul[1]/li[3]/a[1]")
     WEDLUG_TABLICY_FIELD = (By.XPATH, "//input[@id='tabliceTextBox']")
 
-    OBJECT_RESULTAT7 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/h3[1]")
-    OBJECT_RESULTAT8 = (By.XPATH, "/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/strong[1]")
+    OBJECT_RESULTAT7 = (By.XPATH, "//h3[@class='item-value']")
+    #"/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/h3[1]")
+    OBJECT_RESULTAT8 = (By.XPATH, "//strong[@class='item-value']")
+    #"/html[1]/body[1]/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/strong[1]")
     
     PELEN_ROKLAD_TAB = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")
     SPIS_TABLIC = (By.XPATH, "//body[@data-fixed='182']/div[@id='header']/div[@id='accessible-aside-nav']/div[@class='header-nav box']/div[@class='nav-tab']/ul[@class='list-inline']/li[@id='4']/a[1]")

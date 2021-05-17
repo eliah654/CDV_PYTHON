@@ -84,7 +84,7 @@ class SieciowyRozkladJazyTest(BaseTest):
         wst = SieciowyRozkladJazdyOperacje(self.driver)
         wst.podaj_stacje("sodjfuhno")
         sleep(2)
-        
+
         assert "Wpisana nazwa stacji jest nieprawidłowa. Prosimy o zwrócenie uwagi na poprawną pisownię." in wst.rozklad_stacje_rezultat(9)
 
 
