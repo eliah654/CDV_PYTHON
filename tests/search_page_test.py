@@ -86,7 +86,7 @@ class TrainConnectionsTest(BaseTest):
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
-                    assert wynik[0][1] == "OK"
+                    assert wynik[0][0] == "OK"
             
             elif int(przesiadki) == 2:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI2_BTN):
@@ -99,7 +99,7 @@ class TrainConnectionsTest(BaseTest):
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
-                    assert wynik[0][1] == "OK"
+                    assert wynik[0][0] == "OK"
             
             elif int(przesiadki) == 3:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI3_BTN):
@@ -110,9 +110,9 @@ class TrainConnectionsTest(BaseTest):
                     rp.clcik_przesiadki(3)
                     sleep(5)
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
-                    
+                   
                     assert wynik[0][1] == "OK"
-                    assert wynik[0][1] == "OK"
+                    assert wynik[0][0] == "OK"
             
             elif int(przesiadki) == 4:
                 if EC.element_to_be_clickable(ResultsPage.PRZESIADKI4_BTN):
@@ -125,7 +125,7 @@ class TrainConnectionsTest(BaseTest):
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
-                    assert wynik[0][1] == "OK"
+                    assert wynik[0][0] == "OK"
             
             elif int(przesiadki) == 5:
                 
@@ -140,7 +140,7 @@ class TrainConnectionsTest(BaseTest):
                     wynik = [rp.check_przesiadki(pociag, numer, ifnazwa, prze1A, prze1B, prze1C, prze2A, prze2B, prze2C, prze3A, prze3B, prze3C, prze4A, prze4B, prze4C)]
                     
                     assert wynik[0][1] == "OK"
-                    assert wynik[0][1] == "OK"
+                    assert wynik[0][0] == "OK"
             
             else:
                 print("nie ma takiego pociągu")

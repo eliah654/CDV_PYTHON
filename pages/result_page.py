@@ -84,5 +84,6 @@ class ResultPageClicks(MainPage):
         else:
             sprawdzenie.append("NOT")
         
+        
         return sprawdzenie
 
